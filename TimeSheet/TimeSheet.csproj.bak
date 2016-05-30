@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4D153813-76D5-4C32-B33C-15B86BF5B10B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimeSheet</RootNamespace>
+    <AssemblyName>TimeSheet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44328</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.0\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\alerts.css" />
+    <Content Include="Content\fineuploader.css" />
+    <Content Include="Content\Genghis.css" />
+    <Content Include="Content\img\arrow_down.gif" />
+    <Content Include="Content\img\bg_leftMenu_hover.png" />
+    <Content Include="Content\img\bg_leftMenu_normal.png" />
+    <Content Include="Content\img\bg_table_th.png" />
+    <Content Include="Content\img\ClaimUpload.png" />
+    <Content Include="Content\img\ClaimUpload_hover.png" />
+    <Content Include="Content\img\Closed.png" />
+    <Content Include="Content\img\Closed_hover.png" />
+    <Content Include="Content\img\datePicker.gif" />
+    <Content Include="Content\img\Delete.png" />
+    <Content Include="Content\img\Delete_16.png" />
+    <Content Include="Content\img\Details View.png" />
+    <Content Include="Content\img\Document-New.png" />
+    <Content Include="Content\img\Document_Delete.png" />
+    <Content Include="Content\img\Document_Download.png" />
+    <Content Include="Content\img\Edit.png" />
+    <Content Include="Content\img\Export.png" />
+    <Content Include="Content\img\ExportExcel.png" />
+    <Content Include="Content\img\Filters.png" />
+    <Content Include="Content\img\icon.png" />
+    <Content Include="Content\img\icon_add_new.png" />
+    <Content Include="Content\img\icon_attachment.png" />
+    <Content Include="Content\img\icon_check.png" />
+    <Content Include="Content\img\icon_collapse_max.png" />
+    <Content Include="Content\img\icon_collapse_min.png" />
+    <Content Include="Content\img\icon_download.png" />
+    <Content Include="Content\img\icon_home.png" />
+    <Content Include="Content\img\icon_messages.png" />
+    <Content Include="Content\img\icon_regionList.png" />
+    <Content Include="Content\img\icon_reply.png" />
+    <Content Include="Content\img\icon_SendEmail.png" />
+    <Content Include="Content\img\icon_setting.png" />
+    <Content Include="Content\img\icon_upload.png" />
+    <Content Include="Content\img\icon_wholeList.png" />
+    <Content Include="Content\img\icon_XX.png" />
+    <Content Include="Content\img\ImportUpload.png" />
+    <Content Include="Content\img\Link.png" />
+    <Content Include="Content\img\logo_productivity_platform_big.png" />
+    <Content Include="Content\img\logo_productivity_platform_small.png" />
+    <Content Include="Content\img\Mail Out.png" />
+    <Content Include="Content\img\Mail_Out_16.png" />
+    <Content Include="Content\img\Message Add.png" />
+    <Content Include="Content\img\Message Add_16.png" />
+    <Content Include="Content\img\New.png" />
+    <Content Include="Content\img\PDFImport1.png" />
+    <Content Include="Content\img\PDFImport1_hover.png" />
+    <Content Include="Content\img\QuoteMenuBg.gif" />
+    <Content Include="Content\img\s0.png" />
+    <Content Include="Content\img\s1.png" />
+    <Content Include="Content\img\s2.png" />
+    <Content Include="Content\img\s3.png" />
+    <Content Include="Content\img\s4.png" />
+    <Content Include="Content\img\share.png" />
+    <Content Include="Content\img\Status_0.PNG" />
+    <Content Include="Content\img\Status_1.PNG" />
+    <Content Include="Content\img\Status_2.PNG" />
+    <Content Include="Content\img\Status_3.PNG" />
+    <Content Include="Content\img\Status_4.PNG" />
+    <Content Include="Content\img\Status_5.PNG" />
+    <Content Include="Content\img\StepIcon.gif" />
+    <Content Include="Content\img\stuff.png" />
+    <Content Include="Content\img\Submit16.png" />
+    <Content Include="Content\img\TEST.png" />
+    <Content Include="Content\img\test_loginpage.png" />
+    <Content Include="Content\img\texture-bg.png" />
+    <Content Include="Content\img\trash-empty.png" />
+    <Content Include="Content\img\Upload.png" />
+    <Content Include="Content\img\UploadType_No.png" />
+    <Content Include="Content\img\UploadType_ProofFalse.png" />
+    <Content Include="Content\img\UploadType_ProofNo.png" />
+    <Content Include="Content\img\UploadType_ProofTrue.png" />
+    <Content Include="Content\img\UploadType_ProofYes.png" />
+    <Content Include="Content\img\UploadType_Yes.png" />
+    <Content Include="Content\img\Upload_hover.png" />
+    <Content Include="Content\img\usericon.png" />
+    <Content Include="Content\img\Warning Message.png" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\LoginImg\divFooter.gif" />
+    <Content Include="Content\LoginImg\envirments_stage.png" />
+    <Content Include="Content\LoginImg\envirments_uat.png" />
+    <Content Include="Content\LoginImg\errorsBg.gif" />
+    <Content Include="Content\LoginImg\liLeftCircle.gif" />
+    <Content Include="Content\LoginImg\liRightCircle.gif" />
+    <Content Include="Content\LoginImg\LoadingContent.gif" />
+    <Content Include="Content\LoginImg\LoginArea.gif" />
+    <Content Include="Content\LoginImg\loginBg.gif" />
+    <Content Include="Content\LoginImg\LoginButton.gif" />
+    <Content Include="Content\LoginImg\LoginButtonH.gif" />
+    <Content Include="Content\LoginImg\loginFooterBg.gif" />
+    <Content Include="Content\LoginImg\loginLiBg.gif" />
+    <Content Include="Content\LoginImg\loginLiHoverBg.gif" />
+    <Content Include="Content\LoginImg\LoginTextBox.gif" />
+    <Content Include="Content\LoginImg\menuLibg.png" />
+    <Content Include="Content\LoginImg\menuLiHoverbg.png" />
+    <Content Include="Content\LoginImg\test_loginpage.png" />
+    <Content Include="Content\Themes\SbAdmin\css\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\Themes\SbAdmin\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Content\Themes\SbAdmin\css\plugins\social-buttons\social-buttons.css" />
+    <Content Include="Content\Themes\SbAdmin\css\plugins\timeline\timeline.css" />
+    <Content Include="Content\Themes\SbAdmin\css\sb-admin.css" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Themes\SbAdmin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\core.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\icons.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\larger.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\list.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\mixins.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\path.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\spinning.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\stacked.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\less\variables.less" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_core.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_list.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_path.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\Themes\SbAdmin\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\Themes\SbAdmin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Themes\SbAdmin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Themes\SbAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\TimeSheet.pubxml" />
+    <Content Include="Scripts\controllers\controllers.js" />
+    <Content Include="Scripts\controllers\DashBoardController.js" />
+    <Content Include="Scripts\controllers\DetailController.js" />
+    <Content Include="Scripts\controllers\ExceptionController.js" />
+    <Content Include="Scripts\controllers\logincontroller.js" />
+    <Content Include="Scripts\controllers\sharedcontroller.js" />
+    <Content Include="Scripts\controllers\usercontroller.js" />
+    <Content Include="Scripts\datatable\t2v-datatable.js" />
+    <Content Include="Scripts\lib\t2v-core.js" />
+    <Content Include="Scripts\lib\t2v-lib.js" />
+    <Content Include="Scripts\Vendor\bootstrap-typeahead.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\demo\dashboard-demo.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\demo\flot-demo.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\demo\morris-demo.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\dataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\bootstrap-datetimepicker.css" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ar.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.az.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.bn.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ee.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.hy.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ka.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ko.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.no.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\datepicker\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\flot\excanvas.min.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\flot\jquery.flot.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\morris\morris.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="Scripts\Vendor\SbAdmin\sb-admin.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

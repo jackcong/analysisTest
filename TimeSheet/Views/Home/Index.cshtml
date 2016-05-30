@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+    <title>Productivity. Cloud-based platform. </title>
+    <meta name="description" content="TimeSheet">
+    <meta name="keywords" content="" />
+    <meta name="author" content="T2VSoft Inc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    @Styles.Render("~/allStyle")
+
+    @Scripts.Render("~/SystemScript")
+
+    @Scripts.Render("~/CustomerScript")
+
+    <style type="text/css">
+
+        .green {
+            width: 8px;
+            height: 8px;
+            border: 1px solid;
+            display: inline-block;
+            background-color: green;
+            margin: 1px;
+            float: left;
+        }
+        .red {
+            width: 8px;
+            height: 8px;
+            border: 1px solid;
+            display: inline-block;
+            background-color: red;
+            margin: 1px;
+            float: left;
+        }
+
+                .cadetblue {
+            width: 8px;
+            height: 8px;
+            border: 1px solid;
+            display: inline-block;
+            background-color: cadetblue;
+            margin: 1px;
+            float: left;
+        }
+
+        .headerRed {
+            background-color: red;
+        }
+         .headerGreen {
+            background-color: green;
+        }
+        .headerCadetblue {
+            background-color: cadetblue;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function setover(obj) {
+            obj.style.cssText = "width:11px;height:11px";
+        }
+        function setout(obj) {
+            obj.style.cssText = "width:8px;height:8px";
+        }
+        $(function () { $("[data-toggle='tooltip']").tooltip({html:true}); });
+
+    </script>
+</head>
+<body>
+   <div ng-controller="DashBoardCtrl">
+       <br />
+       <br />
+
+       <table>
+           <tr ng-repeat="singlewafer in waferdata">
+               <td><span ng-bind="singlewafer.wafer" ng-class="checkHeaderStyle(singlewafer.step)"></span></td>
+               <td ng-repeat="singlestep in singlewafer.step">
+                   <span  onmouseout="setout(this)" data-toggle="tooltip" title="{{singlestep.n}}<br />{{singlestep.p}}<br />in:{{singlestep.i}}<br />out:{{singlestep.o}}" onmouseover="setover(this)"  ng-class="{'.1':'green','.5':'red','.6':'cadetblue','.12':'cadetblue'}[singlestep.p]"></span>
+               </td>
+           </tr>
+       </table>
+   </div>
+</body>
+</html>
