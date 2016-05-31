@@ -4,85 +4,106 @@
 <head>
     <meta charset="utf-8">
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-
-    <title>Productivity. Cloud-based platform. </title>
-    <meta name="description" content="TimeSheet">
+    <title>Wafer Matrix Visual</title>
+    <meta name="description" content="wafer matrix visual">
     <meta name="keywords" content="" />
     <meta name="author" content="T2VSoft Inc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     @Styles.Render("~/allStyle")
-
     @Scripts.Render("~/SystemScript")
-
     @Scripts.Render("~/CustomerScript")
-
     <style type="text/css">
+        .gray, .green, .red, .cadetblue,.black {
+            margin-top: 4px;
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            float: left;
+            border-radius: 4px;
+            border: solid #ffffff 1px;
+            border-right: 0px;
+        }
+
+        .gray {
+            background-color: #cecece;
+        }
 
         .green {
-            width: 8px;
-            height: 8px;
-            border: 1px solid;
-            display: inline-block;
             background-color: green;
-            margin: 1px;
-            float: left;
-        }
-        .red {
-            width: 8px;
-            height: 8px;
-            border: 1px solid;
-            display: inline-block;
-            background-color: red;
-            margin: 1px;
-            float: left;
         }
 
-                .cadetblue {
-            width: 8px;
-            height: 8px;
-            border: 1px solid;
-            display: inline-block;
-            background-color: cadetblue;
-            margin: 1px;
-            float: left;
+        .red {
+            background-color: red;
+        }
+        .black {
+            background-color:black;
+        }
+
+        .cadetblue {
+            background-color: #0034ff;
         }
 
         .headerRed {
             background-color: red;
+            color: #ffffff;
+            font-size: 9px;
         }
-         .headerGreen {
-            background-color: green;
-        }
-        .headerCadetblue {
-            background-color: cadetblue;
-        }
-    </style>
 
+        .headerGreen {
+            background-color: green;
+            color: #ffffff;
+            font-size: 9px;
+        }
+
+        .headerCadetblue {
+            background-color: #0034ff;
+            color: #ffffff;
+            font-size: 9px;
+        }
+
+        #divHover {width:6px; height:300px; border:solid #bababa 1px; display:block; z-index:-10000; display:none; position:absolute;}
+    </style>
     <script type="text/javascript">
         function setover(obj) {
-            obj.style.cssText = "width:11px;height:11px";
+
+            //var index = obj.attributes["overindex"].nodeValue;
+
+            //$("#tableMain").find("tr").each(function (i,item) {
+
+            //    $(item).find("td:eq(" + index + ")").css("border", "solid 1px red ");
+
+            //});
+
+
+            var top = 10;
+            var left =obj.parentElement.offsetLeft;
+            $("#divHover").css("display","block").css("top",top).css("left",left);
+ 
+            obj.style.cssText = "width:4px;height:15px;border:solid 1px #dbdbdb;border-right:0px;";
         }
         function setout(obj) {
-            obj.style.cssText = "width:8px;height:8px";
+            $("#divHover").css("display", "none");
+            obj.style.cssText = "width:4px;height:4px";
         }
-        $(function () { $("[data-toggle='tooltip']").tooltip({html:true}); });
+        $(function () { $("[data-toggle='tooltip']").tooltip({ html: true }); });
 
     </script>
 </head>
 <body>
-   <div ng-controller="DashBoardCtrl">
-       <br />
-       <br />
+    <div id="divHover"></div>
+    <div ng-controller="DashBoardCtrl" style="padding-right:100px;">
+        <br />
+        <br />
+        <table id="tableMain" style="border:">
+            <tr ng-repeat="singlewafer in waferdata">
+                <td><span ng-bind="singlewafer.wafer" ng-class="checkHeaderStyle(singlewafer.step)"></span></td>
+                <td ng-repeat="singlestep in singlewafer.step">
+                    <span onmouseout="setout(this)" data-toggle="tooltip" overindex="{{$index}}" title="{{singlestep.n}}<br />{{singlestep.p}}<br />in:{{singlestep.i}}<br />out:{{singlestep.o}}" onmouseover="setover(this)" ng-class="checkDetailStyle(singlestep.p,singlewafer.step.length,$index)"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-       <table>
-           <tr ng-repeat="singlewafer in waferdata">
-               <td><span ng-bind="singlewafer.wafer" ng-class="checkHeaderStyle(singlewafer.step)"></span></td>
-               <td ng-repeat="singlestep in singlewafer.step">
-                   <span  onmouseout="setout(this)" data-toggle="tooltip" title="{{singlestep.n}}<br />{{singlestep.p}}<br />in:{{singlestep.i}}<br />out:{{singlestep.o}}" onmouseover="setover(this)"  ng-class="{'.1':'green','.5':'red','.6':'cadetblue','.12':'cadetblue'}[singlestep.p]"></span>
-               </td>
-           </tr>
-       </table>
-   </div>
+
 </body>
 </html>
